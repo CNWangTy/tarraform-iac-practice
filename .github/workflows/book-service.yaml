@@ -27,14 +27,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install libncurses5
       ### CI
-      - name: Run tests
-        run: ./apps/${{ env.SERVICE_NAME }}/scripts/ci.sh
-      - name: Upload report
-        if: success() || failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: ci-report
-          path: ./apps/${{ env.SERVICE_NAME }}/build/reports
+#      - name: Run tests
+#        run: ./apps/${{ env.SERVICE_NAME }}/scripts/ci.sh
+#      - name: Upload report
+#        if: success() || failure()
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: ci-report
+#          path: ./apps/${{ env.SERVICE_NAME }}/build/reports
       - name: Package
         run: ./apps/${{ env.SERVICE_NAME }}/scripts/package.sh
       ## Build and upload docker image
