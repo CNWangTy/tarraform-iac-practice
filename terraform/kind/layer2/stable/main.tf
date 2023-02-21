@@ -61,3 +61,11 @@ module "web-app" {
   source    = "../../../../apps/web-app/terraform/kind-local"
   namespace = local.namespace
 }
+
+module "github-registry" {
+  source = "../../../module/github-registry"
+
+  github_token = "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"
+  github_user  = "CNWangTy"
+  namespace    = local.namespace
+}
