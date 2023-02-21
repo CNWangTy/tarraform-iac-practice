@@ -6,7 +6,10 @@ on:
     paths:
       - 'apps/book-service/**'
   workflow_dispatch:
-permissions: write-all
+
+permissions:
+  packages: write-all
+
 env:
   SERVICE_NAME: book-service
 
