@@ -2,7 +2,7 @@ name: Book Service CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "step-0" ]
     paths:
       - 'apps/book-service/**'
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN }}
 
       - name: Extract metadata (tags, labels) for details
         id: meta
