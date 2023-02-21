@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  SERVICE_NAME: book-service
+  SERVICE_NAME: web-app
 
 jobs:
   ci-and-build-image:
