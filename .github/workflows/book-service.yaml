@@ -9,6 +9,7 @@ on:
 permissions:
   packages: write
   actions: write
+  repository-projects: write
 env:
   SERVICE_NAME: book-service
 
