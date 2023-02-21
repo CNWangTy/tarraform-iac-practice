@@ -6,7 +6,8 @@ on:
     paths:
       - 'apps/web-app/**'
   workflow_dispatch:
-
+permissions:
+  packages: write
 env:
   SERVICE_NAME: web-app
 
@@ -71,7 +72,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup kubectl
         uses: azure/setup-kubectl@v3
 
