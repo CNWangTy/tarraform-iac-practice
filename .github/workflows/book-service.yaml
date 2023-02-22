@@ -7,6 +7,8 @@ on:
       - 'apps/book-service/**'
   workflow_dispatch:
 
+permissions: write-all
+
 env:
   SERVICE_NAME: book-service
 

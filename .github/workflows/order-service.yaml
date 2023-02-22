@@ -7,6 +7,8 @@ on:
       - 'apps/order-service/**'
   workflow_dispatch:
 
+permissions: write-all
+
 env:
   SERVICE_NAME: order-service
 
