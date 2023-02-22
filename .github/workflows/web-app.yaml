@@ -7,10 +7,6 @@ on:
       - 'apps/web-app/**'
   workflow_dispatch:
 
-permissions:
-  packages: write
-  repository-projects: write
-
 env:
   SERVICE_NAME: web-app
 

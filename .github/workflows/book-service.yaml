@@ -7,10 +7,6 @@ on:
       - 'apps/book-service/**'
   workflow_dispatch:
 
-permissions:
-  packages: write
-  repository-projects: write
-
 env:
   SERVICE_NAME: book-service
 
