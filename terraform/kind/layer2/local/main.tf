@@ -73,3 +73,27 @@ module "web-app-local-application" {
   target_revision       = "step-0"
   repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
 }
+
+module "book-service-local-application" {
+  source = "../../../module/argocd-app"
+
+  argocd_namespace      = "argocd"
+  destination_namespace = "kind-local"
+  path                  = "k8sbuild/kind-local/book-service"
+  name                  = "book-service-local-application"
+  project               = "default"
+  target_revision       = "step-0"
+  repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
+}
+
+module "order-service-local-application" {
+  source = "../../../module/argocd-app"
+
+  argocd_namespace      = "argocd"
+  destination_namespace = "kind-local"
+  path                  = "k8sbuild/kind-local/order-service"
+  name                  = "order-service-local-application"
+  project               = "default"
+  target_revision       = "step-0"
+  repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
+}

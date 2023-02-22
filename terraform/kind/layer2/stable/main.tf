@@ -65,12 +65,12 @@ module "web-app" {
 module "github-registry" {
   source = "../../../module/github-registry"
 
-  github_token = "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"
+  github_token = var.github_token
   github_user  = "CNWangTy"
   namespace    = local.namespace
 }
 
-module "web-app-local-application" {
+module "web-app-stable-application" {
   source = "../../../module/argocd-app"
 
   argocd_namespace      = "argocd"
@@ -80,4 +80,33 @@ module "web-app-local-application" {
   project               = "default"
   target_revision       = "step-0"
   repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
+}
+
+module "book-service-stable-application" {
+  source = "../../../module/argocd-app"
+
+  argocd_namespace      = "argocd"
+  destination_namespace = "kind-stable"
+  path                  = "k8sbuild/kind-stable/book-service"
+  name                  = "book-service-stable-application"
+  project               = "default"
+  target_revision       = "step-0"
+  repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
+}
+
+module "order-service-stable-application" {
+  source = "../../../module/argocd-app"
+
+  argocd_namespace      = "argocd"
+  destination_namespace = "kind-stable"
+  path                  = "k8sbuild/kind-stable/order-service"
+  name                  = "order-service-stable-application"
+  project               = "default"
+  target_revision       = "step-0"
+  repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
+}
+
+variable "github_token" {
+  type        = string
+  description = ""
 }

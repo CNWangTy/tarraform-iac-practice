@@ -55,4 +55,10 @@ public class BookController {
       @RequestParam(required = false, defaultValue = "10") int size) {
     return bookService.findPage(searchKey, page, size);
   }
+
+  @GetMapping("/first-ten")
+  public List<BookDTO> findFirstTen(
+      @RequestParam(required = false) String searchKey) {
+    return bookService.findPage(searchKey, 1, 10).data();
+  }
 }
