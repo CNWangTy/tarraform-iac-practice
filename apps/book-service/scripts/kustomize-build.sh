@@ -17,8 +17,7 @@ else
     IMAGE="$SERVICE_NAME:$VERSION"
   else
     VERSION="sha-$(git rev-parse --short HEAD)"
-    IMAGE="ghcr.io/cnwangtianyi/$SERVICE_NAME:$VERSION"
-    export IMAGE_PULL_SECRET="ghcr-login-secret"
+    IMAGE="ghcr.io/cnwangty/$SERVICE_NAME:$VERSION"
   fi
   OVERLAY_PATH="./apps/$SERVICE_NAME/k8s/overlays/$DEPLOY_TO"
   MANIFEST_PATH="./k8sbuild/$DEPLOY_TO/$SERVICE_NAME"
