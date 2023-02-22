@@ -17,7 +17,7 @@ else
     IMAGE="$SERVICE_NAME:$VERSION"
   else
     VERSION="sha-$(git rev-parse --short HEAD)"
-    IMAGE="ghcr.io/CNWangTy/$SERVICE_NAME:$VERSION"
+    IMAGE="ghcr.io/cnwangty/$SERVICE_NAME:$VERSION"
     export IMAGE_PULL_SECRET="ghcr-login-secret"
   fi
   OVERLAY_PATH="./apps/$SERVICE_NAME/k8s/overlays/$DEPLOY_TO"
@@ -26,7 +26,6 @@ else
   export SERVICE_NAME=$SERVICE_NAME
   export VERSION=$VERSION
   export IMAGE_NAME=$IMAGE
-  export IMAGE_PULL_SECRET="todo"
 
   mkdir -p $MANIFEST_PATH
   kubectl kustomize "$OVERLAY_PATH" | envsubst >|"$MANIFEST_PATH/k8s.yaml"
