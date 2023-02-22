@@ -7,9 +7,7 @@ on:
       - 'apps/web-app/**'
   workflow_dispatch:
 
-permissions:
-  packages: write
-  repository-projects: write
+permissions: write-all
 
 env:
   SERVICE_NAME: web-app
