@@ -58,7 +58,7 @@ spec:
             name: book-service-terraform
             optional: true
         image: book-service:latest
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         name: book-service
         ports:
         - containerPort: 8080

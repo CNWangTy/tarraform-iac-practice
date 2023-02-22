@@ -61,3 +61,15 @@ module "web-app" {
   source    = "../../../../apps/web-app/terraform/kind-local"
   namespace = local.namespace
 }
+
+module "web-app-local-application" {
+  source = "../../../module/argocd-app"
+
+  argocd_namespace      = "argocd"
+  destination_namespace = "kind-local"
+  path                  = "k8sbuild/kind-local/web-app"
+  name                  = "web-app-local-application"
+  project               = "default"
+  target_revision       = "step-0"
+  repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
+}

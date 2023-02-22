@@ -69,3 +69,15 @@ module "github-registry" {
   github_user  = "CNWangTy"
   namespace    = local.namespace
 }
+
+module "web-app-local-application" {
+  source = "../../../module/argocd-app"
+
+  argocd_namespace      = "argocd"
+  destination_namespace = "kind-stable"
+  path                  = "k8sbuild/kind-stable/web-app"
+  name                  = "web-app-stable-application"
+  project               = "default"
+  target_revision       = "step-0"
+  repo_url              = "https://github.com/CNWangTy/tarraform-iac-practice"
+}
