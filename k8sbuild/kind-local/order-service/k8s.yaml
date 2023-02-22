@@ -58,7 +58,7 @@ spec:
             name: order-service-terraform
             optional: true
         image: order-service:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         name: order-service
         ports:
         - containerPort: 8080
